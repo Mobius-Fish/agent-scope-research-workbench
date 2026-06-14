@@ -1,0 +1,26 @@
+[project]
+name = "agent-scope-research-workbench"
+version = "0.1.0"
+description = "A LangGraph multi-agent research workflow with perspective generation, verification, and supervisor routing."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "langgraph",
+    "langchain-core",
+    "langchain-openai",
+    "langchain-deepseek",
+    "pydantic>=2",
+    "python-dotenv",
+    "typer[all]",
+    "rich",
+    "tavily-python",
+    "streamlit",
+]
+
+[project.scripts]
+agentscope-research = "agent_scope.cli:app"
+agentscope-eval = "agent_scope.evals.run_eval:app"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
